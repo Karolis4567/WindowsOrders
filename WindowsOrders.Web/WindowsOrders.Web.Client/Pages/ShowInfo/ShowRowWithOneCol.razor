@@ -1,0 +1,15 @@
+﻿<div class="row">
+    <div class="@getClasses">
+        @ChildContent
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public string clases { get; set; } = string.Empty;
+
+    protected string getClasses => $"col-md {this.clases}";
+}

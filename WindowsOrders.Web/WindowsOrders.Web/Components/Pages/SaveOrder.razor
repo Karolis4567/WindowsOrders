@@ -1,0 +1,71 @@
+﻿@page "/SaveOrder"
+@using Blazored.SessionStorage
+@using WindowsOrders.BLL.ApiServices
+@using WindowsOrders.BLL.ApiServices.Extensions
+@using WindowsOrders.BLL.Repos.Dtos
+@rendermode InteractiveServer
+
+
+<h1>
+    @errorHeader
+</h1>
+<h3 class="text-danger">
+    @errorMsg
+</h3>
+
+
+@code {
+    [Inject]
+    private ISessionStorageService sessionStorage { get; set; }
+
+    [Inject]
+    private IApiService apiService { get; set; }
+
+    [Inject]
+    private NavigationManager navigationManager { get; set; }
+
+    private string errorHeader { get; set; }
+    private string errorMsg { get; set; }
+
+    private async Task SaveOrderAsync()
+    {
+        try
+        {
+            var id = 0;
+            var result = await sessionStorage.GetItemAsync<string>("NewOrder");
+
+            if (result != null)
+            {
+                id = await this.apiService.SaveOrderAsync(result.FromJson<OrderDto>());
+                await sessionStorage.RemoveItemAsync("NewOrder");
+            }
+            
+            if (id > 0)
+            {
+                var url = $"/{id}";
+                this.navigationManager.NavigateTo(url);
+            }
+            else
+            {
+                this.errorMsg = "Order information was not set";
+            }
+        }
+        catch (Exception ex)
+        {
+            this.errorMsg = ex.Message;     
+        }    
+    }
+
+    protected override async Task OnAfterRenderAsync(bool firstRender)
+    {
+        this.errorMsg = this.errorHeader = string.Empty;
+        await this.SaveOrderAsync();
+
+        if (errorMsg != null || this.errorMsg.Trim().Length > 0)
+        {
+            this.errorHeader = "Error occured during new order saving";
+            await InvokeAsync(StateHasChanged);
+        }        
+    }    
+}
+<script src="_framework/blazor.server.js"></script>

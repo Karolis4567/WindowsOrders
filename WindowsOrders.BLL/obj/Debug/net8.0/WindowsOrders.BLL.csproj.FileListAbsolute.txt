@@ -1,0 +1,15 @@
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\bin\Debug\net8.0\WindowsOrders.BLL.deps.json
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\bin\Debug\net8.0\WindowsOrders.BLL.dll
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\bin\Debug\net8.0\WindowsOrders.BLL.pdb
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\obj\Debug\net8.0\WindowsOrders.BLL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\obj\Debug\net8.0\WindowsOrders.BLL.AssemblyInfoInputs.cache
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\obj\Debug\net8.0\WindowsOrders.BLL.AssemblyInfo.cs
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\obj\Debug\net8.0\WindowsOrders.BLL.csproj.CoreCompileInputs.cache
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\obj\Debug\net8.0\WindowsOrders.BLL.dll
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\obj\Debug\net8.0\refint\WindowsOrders.BLL.dll
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\obj\Debug\net8.0\WindowsOrders.BLL.pdb
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\obj\Debug\net8.0\ref\WindowsOrders.BLL.dll
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\bin\Debug\net8.0\WindowsOrders.DAL.dll
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\bin\Debug\net8.0\WindowsOrders.DAL.pdb
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\obj\Debug\net8.0\WindowsOrders.BLL.csproj.AssemblyReference.cache
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.BLL\obj\Debug\net8.0\WindowsOrders.BLL.csproj.CopyComplete

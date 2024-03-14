@@ -1,0 +1,23 @@
+﻿@using WindowsOrders.BLL.Repos.Dtos
+@using WindowsOrders.Web.Client.Pages.HighText
+
+<ShowListGroupItem clases="border border-primary">
+    <ShowHighTextPrimary>Window</ShowHighTextPrimary>
+    | Window quantity: @window.quantity
+    <br />
+    Window name: @window.name
+
+    <ShowLIstGroup clases="">
+        @foreach (var item in window.items)
+        {
+            <ShowOrderWindowItem item="@item">
+            </ShowOrderWindowItem>
+        }
+    </ShowLIstGroup>
+
+</ShowListGroupItem>
+
+@code {
+    [Parameter]
+    public OrderWindowDto window { get; set; }
+}

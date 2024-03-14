@@ -1,0 +1,19 @@
+﻿<div class="row">
+    <div class="col-md-3">
+        <label for="@elementId">@elementTitle</label>
+    </div>
+    <div class="col-md-9">
+        @ChildContent
+    </div>
+</div>
+
+@code {
+    [Parameter]
+    public string elementId { get; set; }
+    
+    [Parameter]
+    public string elementTitle { get; set; }
+
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+}

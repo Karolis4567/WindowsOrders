@@ -1,0 +1,75 @@
+﻿@using WindowsOrders.BLL.Repos.Dtos
+@using WindowsOrders.Web.Client.Pages.NewOrders
+@using WindowsOrders.Web.Client.Pages.Selects
+@using WindowsOrders.Web.Client.Pages.ShowInfo
+
+<ShowListGroupItem clases="d-flex border border-warning li-window-items-list">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <p class="text-muted small">
+                    <u>
+                        Window element
+                    </u>
+                </p>
+            </div>
+            <div class="col-md-2">
+                <a href="javascript: void(0);"
+                   @onclick="RemoveLinkClickedAsync"
+                   class="text-muted small">[Remove]</a>
+
+            </div>
+        </div>
+
+        <ShowRowWithOneCol>
+            <input type="hidden" class="item-id" value="@orderWindowItemDto.id" />
+            <input type="hidden" class="item-is-new" value="@itemIsNewValue" />
+
+            <NewOrderRowCustom elementId="@elementIdForSelTitles" elementTitle="Type:">
+                <div class="col-md-9">
+                    <SelectTypes selectedInx="@orderWindowItemDto.typeId" elementId="@elementIdForSelTitles"></SelectTypes>
+                </div>
+            </NewOrderRowCustom>
+            <NewOrderRowInpNumeric elementId="@elementIdForInpWidth"
+                                   elementClassName="inp-width"
+                                   elementTitle="Width:"
+                                   elementValue="@orderWindowItemDto.width.ToString()"
+                                   elementPlaceHolder="">
+
+            </NewOrderRowInpNumeric>
+            <NewOrderRowInpNumeric elementId="@elementIdForInpHeight"
+                                   elementClassName="inp-height"
+                                   elementTitle="Height:"
+                                   elementValue="@orderWindowItemDto.height.ToString()"
+                                   elementPlaceHolder="">
+
+            </NewOrderRowInpNumeric>
+        </ShowRowWithOneCol>
+    </div>
+</ShowListGroupItem>
+
+
+    
+
+@code {
+    [Parameter]
+    public OrderWindowItemDto orderWindowItemDto { get; set; }
+
+    [Parameter]
+    public int idForDeletion { get; set; }
+
+    [Parameter]
+    public EventCallback<int> idForDeletionChanged { get; set; }
+
+    private async Task RemoveLinkClickedAsync()
+    {
+        this.idForDeletion = this.orderWindowItemDto.id;
+        await this.idForDeletionChanged.InvokeAsync(this.idForDeletion);
+
+    }
+
+    private string elementIdForInpWidth => $"inp-order-window-width-{this.orderWindowItemDto.id}";
+    private string elementIdForInpHeight => $"inp-order-window-height-{this.orderWindowItemDto.id}";
+    private string elementIdForSelTitles => $"sel-types-{this.orderWindowItemDto.id}";
+    private int itemIsNewValue => this.orderWindowItemDto.isNew ? 1 : 0;
+}

@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "3P0LlUTddEOh8h6yiGBiLD735QbSGutL4YH+icxFVOM=",
+  "Source": "WindowsOrders.Api",
+  "BasePath": "_content/WindowsOrders.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

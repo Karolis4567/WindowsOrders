@@ -1,0 +1,108 @@
+﻿@using WindowsOrders.BLL.Repos.Dtos
+@using WindowsOrders.Web.Client.Pages.NewOrders
+@using WindowsOrders.Web.Client.Pages.ShowInfo
+
+<ShowListGroupItem clases="d-flex border border-primary li-windows-orders">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <p class="text-muted small">
+                    <u>
+                        Window 
+                    </u>
+                </p>
+            </div>
+            <div class="col-md-2">
+                <a href="javascript: void(0);"
+                   @onclick="AddWindowItem"
+                   class="text-muted small">[Add-Item]</a>
+
+                <a href="javascript: void(0);"
+                   @onclick="RemoveLinkClickedAsync"
+                   class="text-muted small">[Remove]</a>
+            </div>
+        </div>
+        <ShowRowWithOneCol>
+            <input type="hidden" class="window-id" value="@orderWindowDto.id" readonly />
+            <input type="hidden" class="window-is-new" value="@windowIsNewValue" readonly/>
+
+            <NewOrderRowInpText elementId="@elementIdForWindowName"
+                                elementClassName="window-name"
+                                elementTitle="Name for window:"
+                                elementValue="@orderWindowDto.name"
+                                elementPlaceHolder="Order name (GLB)">
+            </NewOrderRowInpText>
+            <NewOrderRowInpNumeric elementId="@elementIdForWindowQty"
+                                   elementClassName="window-qty"
+                                   elementTitle="Window quantity:"
+                                   elementValue="@orderWindowDto.quantity.ToString()"
+                                   elementPlaceHolder="Window quantity (3)">
+            </NewOrderRowInpNumeric>
+        </ShowRowWithOneCol>
+
+        <ShowRowWithOneCol>
+            <ShowLIstGroup clases="m-2">
+                @foreach (var item in windowsItems)
+                {
+                    <NewOrderWindowItem orderWindowItemDto="item" @bind-idForDeletion="windowsItemIdForDeletion">
+                    </NewOrderWindowItem>
+                }
+            </ShowLIstGroup>
+        </ShowRowWithOneCol>
+    </div>
+</ShowListGroupItem>
+
+@code {
+
+    [Parameter]
+    public OrderWindowDto orderWindowDto { get; set; }
+
+    [Parameter]
+    public int idForDeletion { get; set; }
+
+    [Parameter]
+    public EventCallback<int> idForDeletionChanged { get; set; }
+
+    public async Task RemoveLinkClickedAsync()
+    {
+        this.idForDeletion = this.orderWindowDto.id;
+        this.windowsItems.Clear();
+        await this.idForDeletionChanged.InvokeAsync(this.idForDeletion);
+    }
+
+    private List<OrderWindowItemDto> windowsItems { get; set; } = new List<OrderWindowItemDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        if (orderWindowDto.items != null)
+        {
+            this.windowsItems = orderWindowDto.items.ToList();
+        }
+    }
+
+
+
+    public void AddWindowItem()
+    {
+        int id = 0;
+        if (windowsItems.Count() > 0)
+        {
+            id = windowsItems.Select(x => x.id).Max();   
+        }
+        this.windowsItems.Add(new OrderWindowItemDto() { id = (id + 1), isNew = true });
+
+
+    }
+
+    private int _windowsItemIdForDeletion = 0;
+    public int windowsItemIdForDeletion { get => this._windowsItemIdForDeletion; set
+        {
+            this.windowsItems.RemoveAll(x => x.id == value);
+            this._windowsItemIdForDeletion = value;
+
+        }}
+
+    private string elementIdForWindowName => $"inp-order-window-name-{this.orderWindowDto.id }";
+    private string elementIdForWindowQty => $"inp-order-window-qty-{this.orderWindowDto.id}";
+    private int windowIsNewValue => this.orderWindowDto.isNew ? 1 : 0;
+}

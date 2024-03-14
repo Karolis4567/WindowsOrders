@@ -1,0 +1,203 @@
+﻿@page "/NewOrder"
+@page "/NewOrder/{id:int}"
+@using WindowsOrders.BLL.ApiServices
+@using WindowsOrders.BLL.ApiServices.Extensions
+@using WindowsOrders.BLL.Repos.Dtos
+@using Blazored.SessionStorage
+@using WindowsOrders.Web.Client.Pages.NewOrders
+@using WindowsOrders.Web.Client.Pages.Selects
+@using WindowsOrders.Web.Client.Pages.ShowInfo
+@rendermode InteractiveWebAssembly
+
+
+<div class="container">
+   
+    <input type="hidden" id="inp-order-id" value="@orderDto.id" readonly/>
+    
+    <NewOrderRowInpText 
+        elementId="inp-order-name"
+        elementTitle="Order name:"
+        elementValue="@orderDto.name"
+        elementPlaceHolder="Order name (For example: New York Building 1)">
+    </NewOrderRowInpText>
+
+    <NewOrderRowCustom 
+        elementId="sel-states"
+        elementTitle="Us State:">
+        <SelectStates selectedInx="@orderDto.stateId"></SelectStates>
+    </NewOrderRowCustom>
+    
+    <ShowRowWithOneCol>
+        <ShowLIstGroup clases="m-2">
+            @foreach (var item in this.windowsOrders)
+            {
+                <NewOrderWindow orderWindowDto="@item" @bind-idForDeletion="@idForDeletion">
+                </NewOrderWindow>
+            }
+        </ShowLIstGroup>
+    </ShowRowWithOneCol>
+
+    <ShowRowWithOneCol>
+        <a href="javascript: void(0);"
+           @onclick="AddWindow"
+           class="text-muted small">[Add window]</a>
+    </ShowRowWithOneCol>
+
+    <ShowRowWithOneCol clases="text-danger">
+        <div id="div-form-err-summary">
+
+        </div>
+    </ShowRowWithOneCol>
+   
+    <ShowRowWithOneCol>
+        <button type="button" @onclick="SubmitBtnClicked" class="btn btn-primary">Save</button>
+    </ShowRowWithOneCol>
+    
+</div>
+
+
+
+
+<script>
+    
+    function AddInvalidClass(obj) 
+    { 
+        $(obj)
+            .addClass("border-danger")
+            .addClass("border-3");
+    }
+
+
+    function ValidateTextField(obj) 
+    {
+       var str = $.trim(String($(obj).val()));
+       if (str.length == 0) AddInvalidClass(obj);      
+    }
+
+    function ValidateNumericField(obj) 
+    {
+        var validated = false;
+        try 
+        {
+            var num = parseInt($(obj).val());
+           if (num > 0)
+           {
+              validated = true;
+           }
+        } 
+        catch (error) {}
+
+        if (!validated) AddInvalidClass(obj);        
+    }
+
+    function ValidateSelect(obj) 
+    {
+        var selInx = parseInt($(obj).val());
+        if (!(selInx > 0)) 
+        {
+            AddInvalidClass(obj);
+        }
+    }  
+
+
+    function GetAllValues() 
+    {
+        $("#div-form-err-summary").html("")
+        $(".border-danger").each(function () {
+            $(this)
+                .removeClass("border-danger")
+                .removeClass("border-3");
+        });
+
+        var orderId = $("#inp-order-id").val();
+        
+        var orderNameObj = $("#inp-order-name");
+        var stateIdObj = $("#sel-states");
+        
+        ValidateTextField($(orderNameObj));
+        ValidateSelect($(stateIdObj));
+
+        var orderObj =
+        {
+            "id": orderId,
+            "name": $(orderNameObj).val(),
+            "stateId": $(stateIdObj).val(),
+            "stateName" : "none",
+            "stateCode" : "none",
+            "createDate": "2024-01-01",
+            "windows": [] 
+        };
+        
+        
+        $(".li-windows-orders").each(function () {
+            
+            var windowId = $(this).find(".window-id").first().val();
+            var windowIsNew = $(this).find(".window-is-new").first().val();
+            
+            var windowNameObj = $(this).find(".window-name").first();
+            var windowQtyObj = $(this).find(".window-qty").first();
+
+            ValidateTextField($(windowNameObj));
+            ValidateNumericField($(windowQtyObj));
+            
+            var windowObj = 
+            { 
+                "id": windowId,
+                "isNew": (windowIsNew === "1") ? true : false,
+                "name": $(windowNameObj).val(),
+                "quantity": $(windowQtyObj).val(), 
+                "items": [] 
+            }
+            
+            var orderNum = 0;
+
+            $(this).find(".li-window-items-list").each(function () {
+
+               orderNum++;
+
+               var itemId = $(this).find("item-id").first().val();
+               var itemIsNew = $(this).find("item-is-new").first().val();
+               
+               var selTypesObj = $(this).find(".sel-types").first();
+               var widthObj = $(this).find(".inp-width").first();
+               var heightObj = $(this).find(".inp-height").first();
+
+               ValidateSelect($(selTypesObj));
+               ValidateNumericField($(widthObj));
+               ValidateNumericField($(heightObj));
+
+                var itemsObj = 
+               {
+                   "id": itemId,
+                   "isNew": (itemIsNew == 1) ? true : false,
+                   "order": orderNum,
+                   "typeId": $(selTypesObj).val(),
+                   "typeName" : "none",
+                   "width": $(widthObj).val(),
+                   "height": $(heightObj).val()
+               };
+               
+               windowObj.items.push(itemsObj);
+            });            
+            
+            orderObj.windows.push(windowObj);
+        });
+        
+        //console.log(orderObj);
+
+        
+        if ($(".border-danger").length > 0) 
+        {
+            $("#div-form-err-summary").html("Please provide data for a fields marked in red color");
+            return null;
+        } 
+        else 
+        {
+            return JSON.stringify(orderObj);
+        }
+    
+    } 
+</script>
+
+
+

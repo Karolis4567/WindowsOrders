@@ -1,0 +1,41 @@
+﻿@page "/"
+@page "/{id:int}"
+@using WindowsOrders.BLL.ApiServices
+@using WindowsOrders.BLL.Repos.Dtos
+@using WindowsOrders.Web.Client.Pages.HighText
+@using WindowsOrders.Web.Client.Pages.ShowInfo
+@rendermode InteractiveWebAssembly
+<PageTitle>All Orders</PageTitle>
+<h3>All Orders:</h3>
+
+<ShowLIstGroup clases="border border-danger">
+    @foreach (var item in this.orders)
+    {
+        <ShowOrder id="@id" @bind-idForDeletion="@idForDeletion" order="@item"></ShowOrder>
+    }
+</ShowLIstGroup>
+
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    [Inject]
+    private IApiService apiService { get; set; }
+
+    private int _idForDeletion { get; set; } = 0;
+    private int idForDeletion { get => this._idForDeletion; set
+        {
+            this.orders.RemoveAll(x => x.id == value);
+            this._idForDeletion = value;
+        }}
+
+
+    private List<OrderDto> orders = new List<OrderDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        var result = await this.apiService.GetAllOrdersAsync();
+        this.orders = result.ToList(); 
+    }
+}

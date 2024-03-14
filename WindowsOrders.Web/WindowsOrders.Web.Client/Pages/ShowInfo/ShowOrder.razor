@@ -1,0 +1,71 @@
+﻿@using WindowsOrders.BLL.Repos.Dtos
+@using WindowsOrders.Web.Client.Pages.HighText
+@using WindowsOrders.BLL.ApiServices
+
+<ShowListGroupItem clases="border border-danger">
+     @if (id == order.id)
+     {
+        <ShowHighTextSuccess>NEW</ShowHighTextSuccess>        
+     } 
+     <ShowHighTextDanger>Order</ShowHighTextDanger> 
+     | State : (@order.stateCode) @order.stateName
+     | Date : @order.createDate.ToShortDateString()
+     <br/>
+     Name : @order.name
+
+    <ShowLIstGroup clases="">      
+        @foreach(var item in order.windows)
+        {
+            <ShowOrderWindow window="item">
+            </ShowOrderWindow>
+        }
+    </ShowLIstGroup>
+    <br />
+    <a href="javascript: void(0);"
+       @onclick="EditLinkWasClicked"
+       class="text-muted small">[Edit]</a>
+
+    <a href="javascript: void(0);"
+       @onclick="DeleteLinkWasClickedAsync"
+       class="text-muted small">[Delete]</a>
+
+    <br />
+</ShowListGroupItem>
+
+
+@code {
+    [Parameter]
+    public int id { get; set; }
+
+    [Parameter]
+    public int idForDeletion { get; set; }
+
+    [Parameter]
+    public EventCallback<int> idForDeletionChanged { get; set; }
+
+    [Parameter]
+    public OrderDto order { get; set; }
+
+
+    [Inject]
+    private IApiService apiService { get; set; }
+
+    [Inject]
+    private NavigationManager navigationManager { get; set; }
+
+    private void EditLinkWasClicked()
+    {
+        var url = $"/NewOrder/{this.order.id}";
+        navigationManager.NavigateTo(url);
+    }
+
+    private async Task DeleteLinkWasClickedAsync()
+    {
+        var result = await this.apiService.DeleteOrderAsync(this.order.id);
+        if (result)
+        {
+            this.idForDeletion = this.order.id;
+            await this.idForDeletionChanged.InvokeAsync(this.idForDeletion);
+        }      
+    }
+}

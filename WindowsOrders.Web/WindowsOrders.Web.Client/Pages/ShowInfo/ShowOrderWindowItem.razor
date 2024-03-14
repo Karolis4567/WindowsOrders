@@ -1,0 +1,15 @@
+﻿@using WindowsOrders.BLL.Repos.Dtos
+@using WindowsOrders.Web.Client.Pages.HighText
+
+<ShowListGroupItem clases="border border-warning">
+    <ShowHighTextWarning>Item</ShowHighTextWarning>
+    | Type : @item.typeName
+    | Width : @item.width
+    | Height : @item.height
+</ShowListGroupItem>
+
+
+@code {
+    [Parameter]
+    public OrderWindowItemDto item { get; set; }
+}

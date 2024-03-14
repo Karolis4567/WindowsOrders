@@ -1,0 +1,15 @@
+﻿<span class="@getClasses">
+    <strong>@ChildContent</strong>
+</span>
+
+@code {
+    [Parameter]
+    public RenderFragment ChildContent { get; set; }
+
+    [Parameter]
+    public string clases { get; set; }
+
+    protected string getClasses => $"p-1 m-1 border border-dark rounded {clases}";
+
+
+}

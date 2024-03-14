@@ -1,0 +1,14 @@
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\bin\Debug\net8.0\WindowsOrders.DAL.deps.json
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\bin\Debug\net8.0\WindowsOrders.DAL.runtimeconfig.json
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\bin\Debug\net8.0\WindowsOrders.DAL.dll
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\bin\Debug\net8.0\WindowsOrders.DAL.pdb
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\obj\Debug\net8.0\WindowsOrders.DAL.csproj.AssemblyReference.cache
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\obj\Debug\net8.0\WindowsOrders.DAL.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\obj\Debug\net8.0\WindowsOrders.DAL.AssemblyInfoInputs.cache
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\obj\Debug\net8.0\WindowsOrders.DAL.AssemblyInfo.cs
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\obj\Debug\net8.0\WindowsOrders.DAL.csproj.CoreCompileInputs.cache
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\obj\Debug\net8.0\WindowsOrders.DAL.dll
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\obj\Debug\net8.0\refint\WindowsOrders.DAL.dll
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\obj\Debug\net8.0\WindowsOrders.DAL.pdb
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\obj\Debug\net8.0\WindowsOrders.DAL.genruntimeconfig.cache
+C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.DAL\obj\Debug\net8.0\ref\WindowsOrders.DAL.dll

@@ -1,0 +1,26 @@
+﻿<NewOrderRowCustom elementId="@elementId"
+                   elementTitle="@elementTitle">
+    <input type="text" maxlength="100" class="@classNames" id="@elementId"
+           value="@elementValue"
+           placeholder="@elementPlaceHolder" />
+</NewOrderRowCustom>
+
+@code {
+    [Parameter]
+    public string elementId { get; set; }
+
+    [Parameter]
+    public string elementClassName { get; set; } = string.Empty;
+
+    [Parameter]
+    public string elementTitle { get; set; }
+
+    [Parameter]
+    public string elementValue { get; set; } = string.Empty;
+
+    [Parameter]
+    public string elementPlaceHolder { get; set; }
+
+    private string classNames => $"form-control {this.elementClassName}";
+
+}

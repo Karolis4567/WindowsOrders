@@ -1,0 +1,36 @@
+﻿@using WindowsOrders.BLL.ApiServices;
+@using WindowsOrders.BLL.Repos.Dtos
+@rendermode InteractiveWebAssembly
+
+
+
+<select id="sel-states" class="form-control">
+    <option value="0"></option>
+
+    @foreach (var item in statesDtos)
+    {
+        if (@selectedInx == @item.id)
+        {
+            <option value="@item.id" selected>@item.code (@item.name)</option>
+        }
+        else
+        {
+            <option value="@item.id">@item.code (@item.name)</option>
+        }
+    }
+</select>
+
+@code {
+    [Inject]
+    private IApiService apiService { get; set; }
+    
+    [Parameter]
+    public int selectedInx { get; set; }
+
+    private IEnumerable<StatesDto> statesDtos { get; set; } = new List<StatesDto>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        this.statesDtos = await this.apiService.GetStatesAsync();
+    }
+}

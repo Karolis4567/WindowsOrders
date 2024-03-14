@@ -1,0 +1,111 @@
+is_global = true
+build_property.EnableAotAnalyzer = 
+build_property.EnableSingleFileAnalyzer = 
+build_property.EnableTrimAnalyzer = false
+build_property.IncludeAllContentForSelfExtract = 
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = 
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = false
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = browser
+build_property.RootNamespace = WindowsOrders.Web.Client
+build_property.RootNamespace = WindowsOrders.Web.Client
+build_property.ProjectDir = C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.Web\WindowsOrders.Web.Client\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = false
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\karol\source\repos\WindowsOrders.Web\WindowsOrders.Web\WindowsOrders.Web.Client
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/AllOrders.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWxsT3JkZXJzLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/HighText/ShoHighText.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGlnaFRleHRcU2hvSGlnaFRleHQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/HighText/ShowHighTextDanger.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGlnaFRleHRcU2hvd0hpZ2hUZXh0RGFuZ2VyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/HighText/ShowHighTextPrimary.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGlnaFRleHRcU2hvd0hpZ2hUZXh0UHJpbWFyeS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/HighText/ShowHighTextSuccess.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGlnaFRleHRcU2hvd0hpZ2hUZXh0U3VjY2Vzcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/HighText/ShowHighTextWarning.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSGlnaFRleHRcU2hvd0hpZ2hUZXh0V2FybmluZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/NewOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3T3JkZXIucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/NewOrders/NewOrderRowCustom.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3T3JkZXJzXE5ld09yZGVyUm93Q3VzdG9tLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/NewOrders/NewOrderRowInpNumeric.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3T3JkZXJzXE5ld09yZGVyUm93SW5wTnVtZXJpYy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/NewOrders/NewOrderRowInpText.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3T3JkZXJzXE5ld09yZGVyUm93SW5wVGV4dC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/NewOrderWindow.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3T3JkZXJXaW5kb3cucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/NewOrderWindowItem.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcTmV3T3JkZXJXaW5kb3dJdGVtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/Selects/SelectStates.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VsZWN0c1xTZWxlY3RTdGF0ZXMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/Selects/SelectTypes.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2VsZWN0c1xTZWxlY3RUeXBlcy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/ShowInfo/ShowLIstGroup.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvd0luZm9cU2hvd0xJc3RHcm91cC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/ShowInfo/ShowListGroupItem.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvd0luZm9cU2hvd0xpc3RHcm91cEl0ZW0ucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/ShowInfo/ShowOrder.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvd0luZm9cU2hvd09yZGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/ShowInfo/ShowOrderWindow.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvd0luZm9cU2hvd09yZGVyV2luZG93LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/ShowInfo/ShowOrderWindowItem.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvd0luZm9cU2hvd09yZGVyV2luZG93SXRlbS5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/ShowInfo/ShowRowWithOneCol.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hvd0luZm9cU2hvd1Jvd1dpdGhPbmVDb2wucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/Pages/Static/OrderNotFound.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU3RhdGljXE9yZGVyTm90Rm91bmQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/karol/source/repos/WindowsOrders.Web/WindowsOrders.Web/WindowsOrders.Web.Client/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 

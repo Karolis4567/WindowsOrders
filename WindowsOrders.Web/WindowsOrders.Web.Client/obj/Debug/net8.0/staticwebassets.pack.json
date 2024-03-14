@@ -1,0 +1,37 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\karol\\source\\repos\\WindowsOrders.Web\\WindowsOrders.Web\\WindowsOrders.Web.Client\\bin\\Debug\\net8.0\\wwwroot\\_framework\\blazor.webassembly.js",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js"
+    },
+    {
+      "Id": "C:\\Users\\karol\\source\\repos\\WindowsOrders.Web\\WindowsOrders.Web\\WindowsOrders.Web.Client\\obj\\Debug\\net8.0\\compressed\\9q4fdhfivn.gz",
+      "PackagePath": "staticwebassets\\_framework\\blazor.webassembly.js.gz"
+    },
+    {
+      "Id": "C:\\Users\\karol\\source\\repos\\WindowsOrders.Web\\WindowsOrders.Web\\WindowsOrders.Web.Client\\wwwroot\\appsettings.Development.json",
+      "PackagePath": "staticwebassets\\appsettings.Development.json"
+    },
+    {
+      "Id": "C:\\Users\\karol\\source\\repos\\WindowsOrders.Web\\WindowsOrders.Web\\WindowsOrders.Web.Client\\wwwroot\\appsettings.json",
+      "PackagePath": "staticwebassets\\appsettings.json"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.WindowsOrders.Web.Client.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.WindowsOrders.Web.Client.props",
+      "PackagePath": "build\\WindowsOrders.Web.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.WindowsOrders.Web.Client.props",
+      "PackagePath": "buildMultiTargeting\\WindowsOrders.Web.Client.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.WindowsOrders.Web.Client.props",
+      "PackagePath": "buildTransitive\\WindowsOrders.Web.Client.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
