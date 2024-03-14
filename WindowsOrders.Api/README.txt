@@ -6,15 +6,27 @@
 5. Optional: Interface validations. DTO. Separated BLL and DAL projects.
 
 
-1. Database was created using EF. Database could be created using migrations. 
+1. Database was created using EF. 
+Database on your system could be created using migrations. 
 Main project for migrations  - WindowsOrders.Api
+
 To review solution two startup projects should be set -  WindowsOrders.Api and WindowsOrders.Web 
 
-3. In this solution all fiels are made editable.
-4. Solution has ability to create, edit and delete orders.
+Project WindowsOrders.DAL .sql scripts 
+* InsertTestData.sql - Insert test data into database created with migrations
+* InsertUsStates.sql - Insert Us States information. Us States in app has predefined selection option
+* InsertWindowsItemsTypes.sq - Insert window item types. Window item types has predefined selection option
+
+
+3. All order fields are editable.
+4. Orders could be created, edited or deleted.
 5. Solution was splitted into Api, BLL, DAL, Web projects,
+
 Dto's are used in solution,
-Basic validations where done to interface. Fields which needs to be populated with 
-data are marked with red border.
+
+Only very basic validations where implemented.
+Fields which needs to be populated with data are marked with red border.
+
+If needed those validations could be expanded..
 
 
